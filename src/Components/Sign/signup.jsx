@@ -1,10 +1,11 @@
 import "./sign.scss";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logged, loggedOut } from "../../actions";
 
 function SignUp({ title, btnText, hasAccount, apiEndPoint, method, link }) {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const [emailValue, setEmailValue] = useState("");
@@ -31,6 +32,7 @@ function SignUp({ title, btnText, hasAccount, apiEndPoint, method, link }) {
 
     const data = await res.json();
     dispatch(logged(data.token));
+    navigate("/users/profile", { replace: true });
   };
 
   return (
