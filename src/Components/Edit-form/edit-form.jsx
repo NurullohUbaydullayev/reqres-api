@@ -19,9 +19,11 @@ function EditForm({ id }) {
 
     if (res.ok) {
       setSuccess(true);
+    } else {
+      setError(true);
     }
 
-    const data = await res.json();
+    await res.json();
   }
 
   return (

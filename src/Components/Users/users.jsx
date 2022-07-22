@@ -41,6 +41,7 @@ export default function App() {
                       className="users__list-item-avatar"
                       key={user.avatar}
                       src={user.avatar}
+                      alt="User avatar"
                     />
                   </Link>
                 </li>

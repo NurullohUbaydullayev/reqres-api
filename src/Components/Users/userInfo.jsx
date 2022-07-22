@@ -2,9 +2,6 @@ import "./users.scss";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-/* This example requires Tailwind CSS v2.0+ */
-import { PaperClipIcon } from "@heroicons/react/solid";
-
 // Components
 import EditForm from "../Edit-form/edit-form";
 

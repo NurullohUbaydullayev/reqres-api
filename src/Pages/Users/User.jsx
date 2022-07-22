@@ -1,4 +1,4 @@
-import { useParams, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // Components
 import Profile from "../../Components/Users/profile";

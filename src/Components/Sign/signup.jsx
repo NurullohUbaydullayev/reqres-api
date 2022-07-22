@@ -1,11 +1,10 @@
 import "./sign.scss";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { logged, loggedOut } from "../../actions";
 
 function SignUp({ title, btnText, hasAccount, apiEndPoint, method, link }) {
-  const logger = useSelector((state) => state.isLogged);
   const dispatch = useDispatch();
 
   const [emailValue, setEmailValue] = useState("");
