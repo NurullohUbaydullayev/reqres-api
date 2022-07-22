@@ -11,14 +11,13 @@ export default function Example() {
 
   useEffect(() => {
     const getUserInfo = async () => {
-      const res = await fetch("https://reqres.in/api/users/" + id);
+      const res = await fetch(`https://reqres.in/api/users/${id}`);
       const data = await res.json();
       setUserData(data.data);
-      return "Free";
     };
 
     getUserInfo();
-  }, []);
+  }, [id]);
   return (
     <section className="user-info">
       <div className="main-container">
