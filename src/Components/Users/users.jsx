@@ -12,13 +12,15 @@ export default function App() {
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
-  const getUsers = async () => {
-    const res = await fetch("https://reqres.in/api/users?page=" + page);
-    const data = await res.json();
-    setUsers(data.data);
-    setTotalPage(data.total_pages);
-  };
+
   useEffect(() => {
+    const getUsers = async () => {
+      const res = await fetch("https://reqres.in/api/users?page=" + page);
+      const data = await res.json();
+      setUsers(data.data);
+      setTotalPage(data.total_pages);
+    };
+
     getUsers();
   }, [page]);
   return (

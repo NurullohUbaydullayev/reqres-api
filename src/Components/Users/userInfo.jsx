@@ -8,13 +8,15 @@ import EditForm from "../Edit-form/edit-form";
 export default function Example() {
   const { id } = useParams();
   const [userData, setUserData] = useState({});
-  const getUserInfo = async () => {
-    const res = await fetch("https://reqres.in/api/users/" + id);
-    const data = await res.json();
-    setUserData(data.data);
-    return "Free";
-  };
+
   useEffect(() => {
+    const getUserInfo = async () => {
+      const res = await fetch("https://reqres.in/api/users/" + id);
+      const data = await res.json();
+      setUserData(data.data);
+      return "Free";
+    };
+
     getUserInfo();
   }, []);
   return (
